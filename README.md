@@ -7,21 +7,21 @@
 Репозиторий содержит следующие файлы:
 - в папке **scripts**:
   
-1. create_studentsdb.py - DDL-скрипт;
-2. inserts_to_studentsdb.py - DML-скрипт;
-3. queries_studentsdb.py - класс QueriesStudentsDB с запросами по вставке данных в таблицы;
-4. configs_studentsdb.py - класс ConfigsStudentsDB с конфигами для синтеза данных.
+1. `create_studentsdb.py` - DDL-скрипт;
+2. `inserts_to_studentsdb.py` - DML-скрипт;
+3. `queries_studentsdb.py` - класс QueriesStudentsDB с запросами по вставке данных в таблицы;
+4. `configs_studentsdb.py` - класс ConfigsStudentsDB с конфигами для синтеза данных.
 
 - в папке **reports**:
   
-1. report_constraints_and_visualization.ipynb - ноутбук с проверкой работы ограничений целостности и реализацией тестового приложения (запросы и визуализация);
-2. report_students_db.pdf - отчет по выполненному проекту.
+1. `report_constraints_and_visualization.ipynb` - ноутбук с проверкой работы ограничений целостности и реализацией тестового приложения (запросы и визуализация);
+2. `report_students_db.pdf` - отчет по выполненному проекту.
  
 Также в репозитории находятся файлы: 
 
-1. students.db - созданная база данных;
-2. students_db.pdf - отображение таблиц в БД с типами данных и ограничениям целостности;
-3. students_db_sqlite_scheme.svg - визуализация схемы БД.
+1. `students.db` - созданная база данных;
+2. `students_db.pdf` - отображение таблиц в БД с типами данных и ограничениям целостности;
+3. `students_db_sqlite_scheme.svg` - визуализация схемы БД.
 
 База данных создана на основе СУБД SQLite.
 
