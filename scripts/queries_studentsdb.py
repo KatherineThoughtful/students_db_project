@@ -3,8 +3,9 @@ class QueriesStudentsDB:
         self.ParentsEduLevel_query: str = '''INSERT INTO ParentsEduLevel (id, description) VALUES (?, ?)'''
         self.SchoolTypesQuery: str = '''INSERT INTO SchoolsStatus (id, description) VALUES (?, ?)'''
         self.FamilyRelatQuery: str = '''INSERT INTO FamilyRelationship (id, description) VALUES (?, ?)'''
-        self.Parents_query: str = '''INSERT INTO Parents (id, gender, edu_level, occupation, date_of_birth, income, student_id, guardian_status) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)'''
+        self.Parents_query: str = '''INSERT INTO Parents (id, gender, edu_level, occupation, date_of_birth, income, guardian_status) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?)'''
+        self.Students_Parents_query: str = '''INSERT INTO Students_Parents (student_id, parent_id) VALUES (?, ?)'''
         self.AcademicPerfomance_query: str = '''INSERT INTO AcademicPerfomances (id, date, student_id, absence_num, failures_num, study_time, 
                                     extra_classes, higher_edu_expect, final_grade) 
                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'''
@@ -12,8 +13,9 @@ class QueriesStudentsDB:
                             VALUES (?, ?, ?, ?, ?, ?)'''
         self.Teachers_query: str = '''INSERT INTO Teachers (id, gender, name, years_experience, school_id, date) 
                             VALUES (?, ?, ?, ?, ?, ?)'''
-        self.Courses_query: str = '''INSERT INTO Courses (id, name, description, teacher_id, credits) 
-                            VALUES (?, ?, ?, ?, ?)'''
+        self.Courses_query: str = '''INSERT INTO Courses (id, name, description, credits) 
+                            VALUES (?, ?, ?, ?)'''
+        self.Teachers_Courses_query: str = '''INSERT INTO Teachers_Courses (teacher_id, course_id) VALUES (?, ?)'''
         self.Dropouts_query: str = '''INSERT INTO Dropouts (id, date, reason, teacher_id) 
                             VALUES (?, ?, ?, ?)'''
         self.DropoutsRecords_query: str = '''INSERT INTO DropoutsRecords (student_id, dropout_id) 
