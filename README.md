@@ -27,6 +27,6 @@
 
 Библиотеки, использованные в ходе работы над проектом: sqlite3, faker (синтез данных).
 
-[Концептальная схема базы данных по студентам](https://drive.google.com/file/d/1up-pHYgRnpuUeZ46K-X7zxkanIEcnq3-/view?usp=sharing) 
+[Концептуальная схема базы данных по студентам]([https://drive.google.com/file/d/1-_335MHUtr0LQGVit-KiP2LxuL391cYD/view?usp=sharing]) 
 
 *Над проектом работали: Кулеева Жанна, Нагорянская Алина, Савельева Екатерина*
