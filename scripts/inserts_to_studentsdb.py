@@ -157,7 +157,11 @@ for i,row in parents.iterrows():
                    (row['id'], row['gender'], 
                     row['education'], row['job'],
                     row['date_of_birth'], row['income'],
-                    row['student_id'], row['guardian']))
+                    row['guardian']))
+    
+for i,row in parents.iterrows():
+    cursor.execute(queries.Students_Parents_query, 
+                   (row['student_id'], row['id']))
     
 academic_perfomance = df[['id','Number_of_Absences', 'Number_of_Failures', 
                           'Extra_Curricular_Activities', 'Study_Time', 
@@ -237,11 +241,15 @@ courses['id'] = range(0, len(courses))
 for i,row in courses.iterrows():
     cursor.execute(queries.Courses_query, 
                    (row['id'], row['name'], 
-                    row['description'], row['teacher_id'],
+                    row['description'],
                     row['credits']
                     ))
     
-
+for i,row in courses.iterrows():
+    cursor.execute(queries.Teachers_Courses_query, 
+                   (row['teacher_id'], row['id']
+                    ))
+    
 dropouts = df[['id', 'Dropped_Out']]
 dropouts = dropouts[dropouts['Dropped_Out'] == True]
 dropouts = dropouts.rename({'id':'student_id'}, axis = 1)
