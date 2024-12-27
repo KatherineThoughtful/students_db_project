@@ -29,9 +29,16 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS Parents (
     income REAL,
     student_id INTEGER,
     guardian_status INTEGER,
-    FOREIGN KEY (student_id) REFERENCES Students (id) ON DELETE SET NULL,
     FOREIGN KEY (edu_level) REFERENCES ParentsEduLevel (id) ON DELETE SET NULL
                
+) 
+''')
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS Students_Parents (
+    student_id INTEGER,
+    parent_id INTEGER,
+    FOREIGN KEY (student_id) REFERENCES Students(id) ON DELETE SET NULL,
+    FOREIGN KEY (parent_id) REFERENCES Parents(id) ON DELETE SET NULL               
 ) 
 ''')
 
@@ -73,12 +80,18 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS Courses (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
-    teacher_id INTEGER,
-    credits INTEGER,
-    FOREIGN KEY (teacher_id) REFERENCES Teachers (id) ON DELETE SET NULL          
+    credits INTEGER          
 ) 
 ''')
 
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS Teachers_Courses (
+    teacher_id INTEGER,
+    course_id INTEGER,
+    FOREIGN KEY (teacher_id) REFERENCES Teachers(id) ON DELETE SET NULL,
+    FOREIGN KEY (course_id) REFERENCES Courses(id) ON DELETE SET NULL        
+) 
+''')
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS Dropouts (
     id INTEGER PRIMARY KEY,
